@@ -1,8 +1,8 @@
 # 2019-1 Temas Selectos de Física Computacional I (8312)
 
-Luis Benet, [Instituto de Ciencias Físicas](http://www.fis.unam.mx), UNAM
+Luis Benet, [Instituto de Ciencias Físicas](http://www.fis.unam.mx/~benet), UNAM
 
-Evelyn Álvarez Cruz, [Facultad de Ciencias](http://www.fciencias.unam.mx), UNAM
+Evelyn Álvarez Cruz, [Facultad de Ciencias](http://www.fciencias.unam.mx/directorio/71736), UNAM
 
 ---
 
