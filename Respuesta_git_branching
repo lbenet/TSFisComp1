@@ -1,0 +1,157 @@
+# Respuestas para los ejercicios de [learngitbranching.js.org](https://learngitbranching.js.org/)
+
+En este documento se describen soluciones a los distintos problemas.
+
+1. Secuencia introductoria
+
+    1. Introducción a los commits de Git
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+    2. Brancheando [sic] en Git
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+    3. Mergeando [sic] en Git
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+    4. Introducción a rebase
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+2. Acelerando
+
+    1. Desatacheá [sic] tu HEAD
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+    2. Referencias relativas (^)
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+    3. Referencias relativas #2 (~)
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+    4. Revirtiendo cambios en git [sic]
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+3. Moviendo el trabajo por allí
+
+    1. Introducción a cherry-pick
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+    2. Introducción al rebase interactivo
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+4. Bolsa de gatos
+
+    1. Tomando un único commit
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+    2. Haciendo malabares con los commits
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+    3. Haciendo malabares con los commits #2
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+    4. Tags en git [sic]
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+    5. Git Describe [sic]
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+5. Temas avanzados
+
+    1. Rebaseando más de 9000 veces
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+    2. Múltiples padres
+
+        ```shell
+            $
+            $
+            $
+        ```
+
+    3. Ensalada de branches
+
+        ```shell
+            $
+            $
+            $
+        ```
