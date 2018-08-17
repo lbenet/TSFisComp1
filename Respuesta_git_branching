@@ -1,39 +1,44 @@
 # Respuestas para los ejercicios de [learngitbranching.js.org](https://learngitbranching.js.org/)
 
-En este documento se describen soluciones a los distintos problemas.
+En este documento se describen soluciones a los distintos problemas. Estas soluciones no son todas óptimas de acuerdo con el simulador.
 
 1. Secuencia introductoria
 
     1. Introducción a los commits de Git
 
         ```shell
-            $
-            $
-            $
+            $ git commit
+            $ git commit
         ```
 
     2. Brancheando [sic] en Git
 
         ```shell
-            $
-            $
-            $
+            $ git branch bugFix
+            $ git checkout bugFix
         ```
 
     3. Mergeando [sic] en Git
 
         ```shell
-            $
-            $
-            $
+            $ git branch bugFix
+            $ git checkout bugFix
+            $ git commit
+            $ git checkout master
+            $ git commit
+            $ git merge bugFix
         ```
 
     4. Introducción a rebase
 
         ```shell
-            $
-            $
-            $
+            $ git branch bugFix
+            $ git checkout bugFix
+            $ git commit
+            $ git checkout master
+            $ git commit
+            $ git checkout bugFix
+            $ git rebase master
         ```
 
 2. Acelerando
