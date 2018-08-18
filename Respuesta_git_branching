@@ -79,17 +79,18 @@ En este documento se describen soluciones a los distintos problemas. Estas soluc
     1. Introducción a cherry-pick
 
         ```shell
-            $
-            $
-            $
+            $ git cherry-pick C3 C4 C7
         ```
 
     2. Introducción al rebase interactivo
 
+        *Nota*: En la versión en español la opción pick en la simulación está activa por defecto en todos los commits: "hacer pick" en un commit descarta el mismo. Se asume que esto sucede en esta solución.
+
         ```shell
-            $
-            $
-            $
+            $ git rebase -i C1
+            # En la ventana, hacer lo siguiente:
+            #   1. Hacer pick en C2. (Descarta el commit C2.)
+            #   2. Colocar los siguientes commits de arriba a abajo en la lista en el orden siguiente: C3, C5 y C4.
         ```
 
 4. Bolsa de gatos
