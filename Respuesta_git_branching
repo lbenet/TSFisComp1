@@ -98,41 +98,52 @@ En este documento se describen soluciones a los distintos problemas. Estas soluc
     1. Tomando un único commit
 
         ```shell
-            $
-            $
-            $
+            $ git checkout master
+            $ git cherry-pick C4
         ```
 
     2. Haciendo malabares con los commits
 
         ```shell
-            $
-            $
-            $
+            $ git rebase -i C1
+            # En la ventana, hacer lo siguiente:
+            #   1. Colocar los siguientes commits de arriba a abajo en la lista en el orden siguiente: C3, C2.
+            $ git commit --amend
+            $ git rebase -i C1
+            # En la ventana, hacer lo siguiente:
+            #   1. Colocar los siguientes commits de arriba a abajo en la lista en el orden siguiente: C2'', C3'.
+            $ git checkout master
+            $ git merge caption
         ```
 
     3. Haciendo malabares con los commits #2
 
         ```shell
-            $
-            $
-            $
+            $ git checkout master
+            $ git cherry-pick C2
+            $ git commit --amend
+            $ git cherry-pick C3
         ```
 
     4. Tags en git [sic]
 
         ```shell
-            $
-            $
-            $
+            $ git tag v0 C1
+            $ git tag v1 C2
+            $ git checkout v1
         ```
 
     5. Git Describe [sic]
+        *Nota*: En este nivel, para acreditarlo, sólo se requiere hacer un commit. Este nivel busca ilustrar el uso de `git describe`
 
         ```shell
-            $
-            $
-            $
+            # Por ejemplo, dentro del simulador el comando:
+            $ git describe
+            # devuelve:
+            v1_2_gc6
+            # dónde v1 es el tag más cercano en los ancestros del commit siendo descrito (C6) y 2 es la distancia a dicho tag desde el mismo.
+            # En este caso, como no se suministra algún argumento al comando, se utiliza el commit en el que se encuentra HEAD. (En este caso, C6.)
+            $ git commit
         ```
 
 5. Temas avanzados
