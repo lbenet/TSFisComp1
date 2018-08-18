@@ -1,4 +1,4 @@
-# Respuestas para los ejercicios de [learngitbranching.js.org](https://learngitbranching.js.org/)
+# Respuestas para los ejercicios de [learngitbranching.js.org](https://learngitbranching.js.org/), sección Main
 
 En este documento se describen soluciones a los distintos problemas. Estas soluciones no son todas óptimas de acuerdo con el simulador.
 
@@ -46,33 +46,32 @@ En este documento se describen soluciones a los distintos problemas. Estas soluc
     1. Desatacheá [sic] tu HEAD
 
         ```shell
-            $
-            $
-            $
+            $ git checkout C4
         ```
 
     2. Referencias relativas (^)
 
         ```shell
-            $
-            $
-            $
+            $ git checkout bugFix
+            $ git checkout HEAD^
         ```
 
     3. Referencias relativas #2 (~)
 
         ```shell
-            $
-            $
-            $
+            $ git checkout bugFix
+            $ git branch -f bugFix HEAD~3
+            $ git branch -f master C6
+            $ git checkout C1
         ```
 
     4. Revirtiendo cambios en git [sic]
 
         ```shell
-            $
-            $
-            $
+            $ git reset HEAD^
+            $ git checkout pushed
+            $ git revert HEAD
+            # Obsérvese que reset tiene como argumento al commit al que se quiere regresar, mientras que revert tiene como argumento al commit que se quiere deshacer.
         ```
 
 3. Moviendo el trabajo por allí
