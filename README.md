@@ -70,6 +70,8 @@ en combinación con [`IJulia`](https://github.com/JuliaLang/IJulia.jl) en clase.
     - [Intro to Julia, 2018](https://www.youtube.com/watch?v=cPYgipsg4DM), por Jane Herriman
 
     - [Intro to Julia, 2017](https://www.youtube.com/watch?v=4igzy3bGVkQ), por Jane Herriman
+    
+    - [Think Julia: How to Think Like a Computer Scientist](https://benlauwens.github.io/ThinkJulia.jl/latest/book.html), por Ben Lauwens y Allen Downey
 
     - [JuliaBox](http://www.juliabox.com)
 
