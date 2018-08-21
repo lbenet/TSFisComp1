@@ -257,47 +257,84 @@ En este documento se describen soluciones a los distintos problemas. Estas soluc
     1. ¡Push Master! [sic]
 
         ```shell
-
+            $ git checkout master
+            $ git pull
+            $ git checkout side1
+            $ git rebase master
+            $ git checkout side2
+            $ git rebase side1
+            $ git checkout side3
+            $ git rebase side2
+            $ git checkout master
+            $ git rebase side3
+            $ git push
         ```
 
     2. Mergeando [sic] con los remotos
 
         ```shell
-
+            $ git checkout master
+            $ git pull
+            $ git checkout side1
+            $ git merge master
+            $ git checkout side2
+            $ git merge side1
+            $ git merge side3
+            $ git checkout master
+            $ git rebase side2
+            $ git push
         ```
 
     3. Trackeando [sic] remotos
 
         ```shell
-
+            # Una rama local puede estar configurada para hacer "tracking" (seguimiento) sobre una rama remota. Este seguimiento se puede cambiar.
+            # Una forma de hacer esto es mediante `git checkout -b`.
+            # Otra forma de hacerlo es con `git branch -u`.
+            $ git checkout -b side
+            $ git commit
+            $ git fetch
+            $ git rebase o/master
+            $ git branch -u o/master
+            $ git push
         ```
 
     4. Parámetros de `git push`
 
         ```shell
-
+            $ git push origin master
+            $ git push origin foo
         ```
 
     5. ¡Más! [sic] Parámetros de `git push`
 
         ```shell
-
+            $ git push origin foo^:foo
+            $ git push origin master^:foo
+            $ git push origin foo:master
         ```
 
     6. Parámetros de fetch
 
         ```shell
-
+            # Dotar de referencias con dos puntos a `git fetch` sí actualiza la rama local destino o la crea en caso de no existir.
+            $ git fetch origin master^:foo
+            $ git fetch origin foo:master
+            $ git checkout foo
+            $ git merge C6
         ```
 
     7. Origen de nada
 
         ```shell
-
+            # Se puede dotar de parámetros vacíos tanto a fetch como a push. En el caso de push, elimina la rama objetivo. En el caso de fetch, crea una nueva rama.
+            $ git fetch origin :bar
+            $ git push origin :foo
         ```
 
     8. Parámetros de pull
 
         ```shell
-
+            $ git pull origin bar:foo
+            $ git pull origin master:side
         ```
