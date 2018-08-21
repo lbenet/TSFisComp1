@@ -135,6 +135,7 @@ En este documento se describen soluciones a los distintos problemas. Estas soluc
         ```
 
     5. Git Describe [sic]
+
         *Nota*: Para acreditar este nivel, sólo se requiere hacer un commit. Este nivel busca ilustrar el uso de `git describe`.
 
         ```shell
@@ -171,7 +172,7 @@ En este documento se describen soluciones a los distintos problemas. Estas soluc
             $ git checkout master
         ```
 
-    3. Ensalada de branches
+    3. Ensalada de branches [sic]
 
         ```shell
             $ git checkout one
@@ -187,46 +188,69 @@ En este documento se describen soluciones a los distintos problemas. Estas soluc
 
     1. Introducción a clone
 
-        ```shell
+        *Nota*: En la simulación, el rol de `git clone` está al revés: en lugar de clonar un repositorio remoto ya existente, crea un repositorio remoto con el trabajo presente.
 
+        ```shell
+            $ git clone
         ```
 
     2. Ramas remotas
 
         ```shell
-
+            $ git commit
+            $ git checkout o/master
+            $ git commit
+            # El hacer checkout en una rama remota en el repositorio local causa que HEAD no se encuentre atado a ninguna rama, lo que impide la modificación de las ramas remotas en el repositorio local de forma sencilla.
         ```
 
     3. `git fetch`
 
         ```shell
-
+            # `git fetch` sólo descarga los commits en el repositorio remoto que no se encuentran en el repositorio local y actualiza las ramas remotas del repositorio con dichos commits. No altera las ramas locales.
+            $ git fetch
+            # Una vez hecho esto, se pueden usar los comandos locales de Git sobre las ramas remotas en el repositorio local como si se trataran de ramas locales, con la salvedad de lo comentado en el ejercicio anterior.
         ```
 
     4. `git pull`
 
         ```shell
-
+            # `git pull` es un método abreviado de `git fetch` para el repositorio remoto y `git merge` de la rama local sobre la rama remota en el repositorio local.
+            $ git pull
         ```
 
     5. Simulando el trabajo en equipo
 
-        ```shell
+        *Nota*: `git fakeTeamwork` es un comando exclusivo del simulador para generar commits en repositorios remotos sin que estos commits sean reflejados en el repositorio local sin intervención de otros comandos.
 
+        ```shell
+            $ git clone # Crea el remoto en la simulación. Cf. nota en el primer ejercicio de la primer parte de ña sección "Remote".
+            $ git fakeTeamwork master 2 # Genera cuatro commits en el repositorio remoto en la rama master.
+            $ git commit
+            $ git pull
         ```
 
     6. `git push`
 
         ```shell
-
+            # `git push`, en principio, es una forma de subir el trabajo local al repositorio remoto y de actualizar las ramas en el mismo.
+            $ git commit
+            $ git commit
+            $ git push
         ```
 
     7. Historia divergente
 
         ```shell
-
+            # `git push`, en el caso en el que existan cambios en el repositorio remoto que no se encuentren en el repositorio local y existan cambios en el repositorio local que no se encuentran en el repositorio remoto, no tiene efecto y requiere la inclusión de los cambios remotos al repositorio local antes de hacer la subida del trabajo local.
+            # Algunas formas de solucionar este conflicto son mediante el uso de `git rebase` sobre la rama remota en el repositorio local o el uso de `git merge` entre la rama remota y la rama local en el repositorio local. Esto es después de realizar `git fetch` para poder usar el estado actual del repositorio remoto.
+            # Un atajo para para hacer `git fetch` seguido de `git rebase` es `git pull --rebase`
+            $ git clone
+            $ git fakeTeamwork master 1
+            $ git commit
+            $ git fetch
+            $ git rebase o/master
+            $ git push
         ```
-
 
 2. Hasta el origin y más allá -- Git Remotes [sic] avanzado! [sic]
 
