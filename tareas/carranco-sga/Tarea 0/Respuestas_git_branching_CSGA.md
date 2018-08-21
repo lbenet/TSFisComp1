@@ -1,4 +1,5 @@
-# Respuestas para los ejercicios de [learngitbranching.js.org](https://learngitbranching.js.org/), sección Main
+# Respuestas para los ejercicios de [learngitbranching.js.org](https://learngitbranching.js.org/)
+## Main
 
 En este documento se describen soluciones a los distintos problemas. Estas soluciones no son todas óptimas de acuerdo con el simulador.
 
@@ -178,4 +179,101 @@ En este documento se describen soluciones a los distintos problemas. Estas soluc
             $ git checkout two
             $ git cherry-pick C5 C4 C3 C2
             $ git branch -f three C2
+        ```
+
+## Remote
+
+1. Push & Pull [sic] -- Git [sic] Remotes!
+
+    1. Introducción a clone
+
+        ```shell
+
+        ```
+
+    2. Ramas remotas
+
+        ```shell
+
+        ```
+
+    3. `git fetch`
+
+        ```shell
+
+        ```
+
+    4. `git pull`
+
+        ```shell
+
+        ```
+
+    5. Simulando el trabajo en equipo
+
+        ```shell
+
+        ```
+
+    6. `git push`
+
+        ```shell
+
+        ```
+
+    7. Historia divergente
+
+        ```shell
+
+        ```
+
+
+2. Hasta el origin y más allá -- Git Remotes [sic] avanzado! [sic]
+
+    1. ¡Push Master! [sic]
+
+        ```shell
+
+        ```
+
+    2. Mergeando [sic] con los remotos
+
+        ```shell
+
+        ```
+
+    3. Trackeando [sic] remotos
+
+        ```shell
+
+        ```
+
+    4. Parámetros de `git push`
+
+        ```shell
+
+        ```
+
+    5. ¡Más! [sic] Parámetros de `git push`
+
+        ```shell
+
+        ```
+
+    6. Parámetros de fetch
+
+        ```shell
+
+        ```
+
+    7. Origen de nada
+
+        ```shell
+
+        ```
+
+    8. Parámetros de pull
+
+        ```shell
+
         ```
