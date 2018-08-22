@@ -17,6 +17,9 @@ leer su tarea.
 * Hagan `Issues` de sus dudas.
 
 ### Tarea 0
-* Pull request: viernes 17 de agosto.
+* `pull request` inicial: 17/08/2018.
+* Aceptación del `pull request`: 24/08/2018.
 
-* Fecha de límite de correcciones: 24 de agosto.
+### Tarea 1
+* `pull request` inicial:24/08/2018
+* Aceptación del `pull request`:02/09/2018
