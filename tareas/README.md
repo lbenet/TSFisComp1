@@ -2,19 +2,18 @@
 
 * Las tareas se pueden hacer en **equipo**.
 
-* El `pull request` de la tarea debe hacerse en el tiempo programado.
+* El primer `pull request` de la tarea debe hacerse en el tiempo programado.
 
-* Durante la semana siguiente al `pull request` pueden
-recibir correcciones que deben hacerse antes de que pase
-una semana. Si esto no ocurre la tarea se cuenta
-como **no entregada**.
+* Durante la semana siguiente al primer `pull request` pueden recibir correcciones que deben hacerse antes de que llegue la fecha de aceptación. Si esto no ocurre la tarea se cuenta como **no entregada**.
 
-* Para cada tarea debe hacer un `pull request` **diferente**.
+* No se deben mezclar en un mismo `pull request` archivos de diferentes tareas.
 
 * **Documenten** bien su código para que nos sea fácil
-leer su tarea.
+leerlo.
 
 * Hagan `Issues` de sus dudas.
+
+                      ¡Diviértanse!
 
 ### Tarea 0
 * `pull request` inicial: 17/08/2018.
