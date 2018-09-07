@@ -20,5 +20,11 @@ leerlo.
 * Aceptación del `pull request`: 24/08/2018.
 
 ### Tarea 1
-* `pull request` inicial:24/08/2018
+* `pull request` inicial: 24/08/2018
 * Aceptación del `pull request`:02/09/2018
+
+### Tarea 2
+* `pull request` inicial: 07/08/2018
+* Aceptación del `pull request`: 16\09\2018
+
+Nota: dado que es el fin de semana de fiestas patrias les recomiendo que hagan lo posible porque su tarea quede aceptada el viernes 14.
