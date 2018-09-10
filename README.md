@@ -48,7 +48,7 @@ una *fecha límite* para el envío inicial y otra para la aceptación del pull-r
 El **proyecto final** consistirá en desarrollar un tema en donde utilizen las
 herramientas del curso a un sistema dinámico concreto. Los temas concretos
 serán propuestos a su debido tiempo. La presentación consiste de un seminario
-de 20-25 minutos (usando el [Jupyter notebook](jupyter.org) o en pdf); la
+de 20-25 minutos (usando el [Jupyter notebook](https://jupyter.org) o en pdf); la
 presentación debe ser previamente enviada por email.
 
 Las tareas se *deben* hacer en equipo (excepto cuando se indique lo contrario);
@@ -67,11 +67,13 @@ en combinación con [`IJulia`](https://github.com/JuliaLang/IJulia.jl) en clase.
 
 - [Julia](http://julialang.org/julialang.org)
 
-    - [Intro to Julia, 2018](https://www.youtube.com/watch?v=Fh3Nj0v0Iho&t=0s&list=PLP8iPy9hna6Qsq5_-zrg0NTwqDSDYtfQB&index=92), por Jane Herriman
+    - [Intro to Julia, 2018](https://www.youtube.com/watch?v=cPYgipsg4DM), por Jane Herriman
 
     - [Intro to Julia, 2017](https://www.youtube.com/watch?v=4igzy3bGVkQ), por Jane Herriman
+    
+    - [Think Julia: How to Think Like a Computer Scientist](https://benlauwens.github.io/ThinkJulia.jl/latest/book.html), por Ben Lauwens y Allen Downey
 
-    - [JuliaBox](http://juliabox.org)
+    - [JuliaBox](http://www.juliabox.com)
 
 
 - **Tutoriales de git**
