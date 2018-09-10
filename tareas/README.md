@@ -27,4 +27,4 @@ leerlo.
 * `pull request` inicial: 07/08/2018
 * Aceptación del `pull request`: 16\09\2018
 
-Nota: dado que es el fin de semana de fiestas patrias les recomiendo que hagan lo posible porque su tarea quede aceptada el viernes 14.
+Nota: dado que es el fin de semana de fiestas patrias les recomiendo que hagan lo posible porque su tarea quede aceptada el viernes 14.¡Felices fiestas patrias!
