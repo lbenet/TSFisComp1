@@ -61,9 +61,20 @@ function deriva(f, x₀)
     f(x).x′
 end
 
-
-@recipe function f(D::Dual, rangox=linspace(0,4,100))
-
+@recipe function f(X::Vector{Dual}, F::Function)
+    x = [x.x for x in X]
+    Y = F.(X)
+    f = [y.x for y in Y]; f′ = [y.x′ for y in Y]
+    @series begin
+        seriestype := :line
+        label := "f"
+        x, f
+    end
+    @series begin
+        seriestype := :line
+        label := "f'"
+        x, f′
+    end
 end
 
 end
