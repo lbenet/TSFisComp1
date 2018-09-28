@@ -1,6 +1,8 @@
 module Mapeos
 using RecipesBase
 
+export Mapeo, f
+
 struct Mapeo
     F::Function
     x₀::Real
