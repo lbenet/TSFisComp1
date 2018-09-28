@@ -2,6 +2,8 @@ module AutoDiff
 
 using RecipesBase
 
+export dual
+
 struct Dual
     x::Float64
     x′::Float64
@@ -36,6 +38,7 @@ end
 
 -(a::Real, u::Dual) = Dual(a - u.x, u.x′)
 -(u::Dual, a::Real) = Dual(u.x - a, u.x′)
+-(u::Dual) = Dual(-u.x, -u.x′)
 
 *(a::Real, u::Dual) = Dual(a * u.x, u.x′ * a)
 *(u::Dual, a::Real) = Dual(a * u.x, u.x′ * a)
@@ -66,12 +69,10 @@ end
     Y = F.(X)
     f = [y.x for y in Y]; f′ = [y.x′ for y in Y]
     @series begin
-        seriestype := :line
         label := "f"
         x, f
     end
     @series begin
-        seriestype := :line
         label := "f'"
         x, f′
     end
