@@ -68,12 +68,13 @@ end
         label := "y=x"
         xx, x -> x
     end
+    # TODO: Dar la posibilidad de modificar esto en la llamada
     @series begin
         seriestype := :path
         ls := :dash
         marker := (3, .5, :dot)
         label := "Trayectoria"
-        x[1:n], y[1:n]
+        x[n], y[n]
     end
 end
 
