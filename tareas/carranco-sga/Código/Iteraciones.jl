@@ -1,5 +1,7 @@
 module Iteraciones
 
+using Plots, LaTeXStrings
+
 """
     iteraciones(f::Function, número_iteraciones::Int, x0)
 
