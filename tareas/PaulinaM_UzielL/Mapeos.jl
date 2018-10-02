@@ -10,9 +10,10 @@ struct Mapeo
     xnn::Vector{Float64}
     x::Vector{Float64}
     y::Vector{Float64}
+    div::Bool
 end
 
-function itera_mapeo(F, x0; n_iters=100)
+function itera_mapeo(F, x0; n_iters=20, inf=1e7)
     xnn = Float64[x0]
     x = Float64[x0]; y = [-10000.]
     for i in 1:n_iters
@@ -24,13 +25,24 @@ function itera_mapeo(F, x0; n_iters=100)
         push!(x, Fn)
         push!(y, Fn)
     end
-    xnn, (x, y)
+    div = any(xnn .> inf)
+    xnn, (x, y), div
 end
 
 function Mapeo(F::Function, x₀::Real, n::Int)
-    xnn, x_y = itera_mapeo(F, x₀, n_iters=n)
-    Mapeo(F, x₀, n, xnn, x_y...)
+    xnn, x_y, div = itera_mapeo(F, x₀, n_iters=n)
+    Mapeo(F, x₀, n, xnn, x_y..., div)
 end
+
+# TODO: Agregar más constructores para el "threshold" de infinito
+
+function Mapeo(F::Function, x₀::Real)
+    xnn, x_y, div = itera_mapeo(F, x₀)
+    Mapeo(F, x₀, 20, xnn, x_y..., div) # El 20 cuadra con el default de itera_mapeo
+end
+
+# TODO: escribir show para un mapeo, cuál sería una buena opción?
+
 
 @userplot grafica_mapeo
 
@@ -56,12 +68,13 @@ end
         label := "y=x"
         xx, x -> x
     end
+    # TODO: Dar la posibilidad de modificar esto en la llamada
     @series begin
         seriestype := :path
         ls := :dash
         marker := (3, .5, :dot)
         label := "Trayectoria"
-        x[1:n], y[1:n]
+        x[n], y[n]
     end
 end
 
