@@ -46,6 +46,9 @@ function derivada_derecha(f::Function, x0::Number, h::Number)
     return(derivada)
 end
 
+#Extensión para usar la derivada con la función `newton` de `Newton.jl`.
+derivada_derecha(h) = (f, x0) ->  derivada_derecha(f, x0, h)
+
 """
     derivada_simétrica(f, x0, h)
 
@@ -91,6 +94,9 @@ function derivada_simétrica(f::Function, x0::Number, h::Number)
     
     return(derivada)
 end
+
+#Extensión para usar la derivada con la función `newton` de `Newton.jl`.
+derivada_simétrica(h) = (f, x0) ->  derivada_simétrica(f, x0, h)
 
 """
     derivada_compleja(f, x0, h)
@@ -141,6 +147,9 @@ function derivada_compleja(f::Function, x0::Number, h::Number)
     
     return(derivada.im)
 end
+
+#Extensión para usar la derivada con la función `newton` de `Newton.jl`.
+derivada_compleja(h) = (f, x0) ->  derivada_compleja(f, x0, h)
 
 #Exporta las funciones al entorno global:
 

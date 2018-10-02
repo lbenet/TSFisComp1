@@ -1,4 +1,5 @@
 module Newton
+
 """
     newton(f, fprime, x0, número_iteraciones, tolerancia)
 
@@ -61,6 +62,39 @@ function newton(f::Function, fprime::Function, x0::Number, número_iteraciones::
         
         error("No hay convergencia con tolerancia = $tolerancia. diferencia = $diferencia")
     end
+end
+
+#Definición con derivada numérica:
+
+"""
+    newton(f, x0, número_iteraciones, tolerancia, derivada)
+
+Esta extensión de la función no requiere especificar la derivada de forma analítica, sino el método numérico usado para calcular la derivada mediante el argumento `derivada`. 
+
+# Argumentos
+
+Se ocupan los mismos argumentos que en la función `newton` original, salvo el caso del argumento `fprime`. Para usar esta extensión es opcional especificar el método numérico de la derivada mediante el argumento `derivada`. Por defecto está configurado como `derivada_dual` del módulo `DifAutom.jl`.
+
+La función `derivada` debe de tener la siguiente sintaxis de argumentos:
+`derivada(f, x)`. Este valor es la aproximación numérica a la derivada de la función `f` en el punto `x`.
+
+# Ejemplos
+```julia-repl
+    julia> newton(x -> x^2 - 2, 2, 5)
+    1.4142135623730951
+
+    julia> newton(x -> x^2 - 2, 2, 5, 1e-8, derivada_derecha(1e-5))
+    1.4142135623730951
+
+    julia> newton(x -> x^2 - 2, 2, 5, 1e-8, derivada_derecha(1e-2))
+    No hay convergencia con tolerancia = 1.0e-8. diferencia = 4.436118783424092e-8
+```
+"""
+function newton(f::Function, x0::Number, número_iteraciones::Int64, tolerancia::Real = 1e-8, derivada::Function = derivada_dual)
+
+    fprime = x -> derivada(f, x)
+    
+    return newton(f, fprime, x0, número_iteraciones, tolerancia)
 end
 
 #Exporta la función:
