@@ -59,13 +59,11 @@ end
 /(a::Real, b::Dual) = Dual(a / b.x, (- (a/b.x) * b.x´)/b.x)
 /(a::Dual, b::Real) = Dual(a.x / b, a.x´/b)
 
+^(x::Dual, y::T) where T<:Real = Dual(^(x.x, y), x.x´*y*^(x.x, y - 1))
 
-function ^(a::Dual, n::Int)
-    y = a.x^(n-1)
-    Dual(a.x * y, n*y*a.x´)
-end
+#Algunas funciones trascendentes:
 
-import Base.sqrt
+import Base: sqrt, exp, log
 
 sqrt(u::Dual) = begin
    
@@ -75,8 +73,6 @@ sqrt(u::Dual) = begin
     return(valor)
 end
 
-import Base.exp
-
 exp(u::Dual) = begin
    
     exponencial = exp(u.x)
@@ -85,8 +81,6 @@ exp(u::Dual) = begin
     return(valor)
 end
 
-import Base.log
-
 log(u::Dual) = begin
    
     valor = Dual(log(u.x), u.x´/u.x)
@@ -94,37 +88,47 @@ log(u::Dual) = begin
     return(valor)
 end
 
-import Base.sin
+log(b::Real, x::Dual) = log(x)/log(b)
 
-sin(u::Dual) = begin
-    
-    valor = Dual(sin(u.x), u.x´*cos(u.x))
-    return(valor)
-end   
+#Funciones trigonométricas y sus inversas:
 
-import Base.cos
+import Base: sin, cos, tan, cot, sec, csc
 
-cos(u::Dual) = begin
-    
-    valor = Dual(cos(u.x), -u.x´*sin(u.x))
-    return(valor)
-end  
+sin(x::Dual) = Dual(sin(x.x),  x.x'*cos(x,x))
+cos(x::Dual) = Dual(cos(x.x), -x.x'*sin(x,x))
+tan(x::Dual) = Dual(tan(x.x),  x.x´*sec(x.x)^2)
+cot(x::Dual) = Dual(cot(x.x), -x.x´*csc(x.x)^2)
+sec(x::Dual) = Dual(sec(x.x),  x.x'*sec(x.x)*tan(x.x))
+csc(x::Dual) = Dual(csc(x.x), -x.x'*csc(x.x)*cot(x.x))
 
-import Base.sinh
+import Base: asin, acos, atan, acot, asec, acsc
 
-sinh(u::Dual) = begin
-    
-    valor = Dual(sinh(u.x), u.x´*cosh(u.x))
-    return(valor)
-end   
+asin(x::Dual) = Dual(asin(x.x),  x.x'/sqrt(1 - x.x^2))
+acos(x::Dual) = Dual(acos(x.x), -x.x'/sqrt(1 - x.x^2))
+atan(x::Dual) = Dual(atan(x.x),  x.x´/(1 + x.x^2))
+acot(x::Dual) = Dual(acot(x.x), -x.x´/(1 + x.x^2))
+asec(x::Dual) = Dual(asec(x.x),  x.x'/(abs(x.x)*sqrt(x.x^2 - 1)))
+acsc(x::Dual) = Dual(acsc(x.x), -x.x'/(abs(x.x)*sqrt(x.x^2 - 1)))
 
-import Base.cosh
+#Funciones hiperbólicas y sus inversas:
 
-cosh(u::Dual) = begin
-    
-    valor = Dual(cosh(u.x), u.x´*sinh(u.x))
-    return(valor)
-end
+import Base: sinh, cosh, tanh, coth, sech, csch
+
+sinh(x::Dual) = Dual(sinh(x.x), x.x'*cosh(x,x))
+cosh(x::Dual) = Dual(cosh(x.x), x.x'*sinh(x,x))
+tanh(x::Dual) = Dual(tanh(x.x), x.x´*sech(x.x)^2)
+coth(x::Dual) = Dual(coth(x.x), -x.x´*csch(x.x)^2)
+sech(x::Dual) = Dual(sech(x.x), -x.x'*sech(x.x)*tanh(x.x))
+csch(x::Dual) = Dual(csch(x.x), -x.x'*csch(x.x)*coth(x.x))
+
+import Base: asinh, acosh, atanh, acoth, asech, acsch
+
+asinh(x::Dual) = Dual(asinh(x.x), x.x'*log(x.x + sqrt(x.x^2 + 1)))
+acosh(x::Dual) = Dual(acosh(x.x), x.x'*log(x.x + sqrt(x.x^2 - 1)))
+atanh(x::Dual) = Dual(atanh(x.x), x.x´*log((1 + x.x)/(1 - x.x))/2)
+acoth(x::Dual) = Dual(acoth(x.x), x.x´*log((x.x + 1)/(x.x - 1))/2)
+asech(x::Dual) = Dual(asech(x.x), x.x'*log((1 + sqrt(1 - x.x^2))/x.x))
+acsch(x::Dual) = Dual(acsch(x.x), x.x'*log((1 + sqrt(1 + x.x^2))/x.x))
 
 """
     derivada_dual(f, x0)
@@ -153,21 +157,13 @@ end
 
 #Exportando las funciones al entorno global:
 
-export show
-export Dual
-export dual
-export +
-export -
-export *
-export /
-export ^
-export sqrt
-export exp
-export log
-export sin
-export cos
-export sinh
-export cosh
+export show, Dual, dual
+export +, -, *, /, ^
+export sqrt, exp, log
+export sin, cos, tan, cot, sec, csc
+export asin, acos, atan, acot, asec, acsc
+export sinh, cosh, tanh, coth, sech, csch
+export asinh, acosh, atanh, acoth, asech, acsch
 export derivada_dual
 
 end

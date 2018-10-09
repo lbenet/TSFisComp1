@@ -1,5 +1,7 @@
 module Newton
 
+using Derivadas, DifAutom
+
 """
     newton(f, fprime, x0, número_iteraciones, tolerancia)
 
