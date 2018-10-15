@@ -11,7 +11,7 @@
 * **Documenten** bien su código para que nos sea fácil
 leerlo.
 
-* Hagan `Issues` de sus dudas.
+* Abran un `Issue` con sus dudas.
 
                       ¡Diviértanse!
 
@@ -24,7 +24,17 @@ leerlo.
 * Aceptación del `pull request`:02/09/2018
 
 ### Tarea 2
-* `pull request` inicial: 07/08/2018
+* `pull request` inicial: 07/09/2018
 * Aceptación del `pull request`: 16\09\2018
 
-Nota: dado que es el fin de semana de fiestas patrias les recomiendo que hagan lo posible porque su tarea quede aceptada el viernes 14.¡Felices fiestas patrias!
+### Tarea 3
+* `pull request` inicial: 21/09/2018
+* Aceptación del `pull request`: 25\09\2018
+
+### Tarea 4
+* `pull request` inicial: 28/09/2018
+* Aceptación del `pull request`: 9\10\2018
+
+### Tarea 5
+* `pull request` inicial: 15/10/2018
+* Aceptación del `pull request`: 21\09\2018
