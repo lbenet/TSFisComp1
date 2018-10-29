@@ -37,4 +37,8 @@ leerlo.
 
 ### Tarea 5
 * `pull request` inicial: 15/10/2018
-* Aceptación del `pull request`: 21\09\2018
+* Aceptación del `pull request`: 30\10\2018
+
+### Tarea 6
+* `pull request` inicial: 3/11/2018
+* Aceptación del `pull request`: 9\11\2018
