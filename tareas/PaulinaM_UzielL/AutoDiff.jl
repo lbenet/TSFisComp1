@@ -2,6 +2,8 @@ module AutoDiff
 
 using RecipesBase
 
+export dual
+
 struct Dual
     x::Float64
     x′::Float64
