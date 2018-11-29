@@ -53,7 +53,7 @@ end
     mapeo = p.args[1]
     n = p.args[2]
     F, x, y = mapeo.F, mapeo.x, mapeo.y
-    rango_x = [minimum(x), maximum(x) + 2]
+    rango_x = [minimum(x[n]), maximum(x[n]) + 2]
     rango_y = [minimum(y[2:end]) - 2, maximum(y) + 2]
     xx = linspace(rango_x[1], rango_x[2], 1000)
     xlims := rango_x
