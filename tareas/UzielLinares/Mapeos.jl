@@ -58,16 +58,16 @@ end
     xx = linspace(rango_x[1], rango_x[2], 1000)
     xlims := rango_x
     ylims := rango_y
-    @series begin
-        seriestype := :line
-        label := "F(x)"
-        xx, x -> F(x)
-    end
-    @series begin
-        seriestype := :line
-        label := "y=x"
-        xx, x -> x
-    end
+    #@series begin
+    #    seriestype := :line
+    #    label := "F(x)"
+    #    xx, x -> F(x)
+    #end
+    #@series begin
+    #    seriestype := :line
+    #    label := "y=x"
+    #    xx, x -> x
+    #end
     # TODO: Dar la posibilidad de modificar esto en la llamada
     @series begin
         seriestype := :path
