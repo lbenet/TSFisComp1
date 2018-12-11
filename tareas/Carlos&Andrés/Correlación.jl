@@ -196,10 +196,18 @@ end
 
 function gráfica_corr(A)
     
-    R = corr(A)    
+    R = corr(A)
+    R2 = []
+    
+    for i in 1:length(R)
+        
+        r = R[i]^2
+        push!(R2,r)
+     
+    end
     
     time = 1:length(R)
-    plot(time,R,legend=false, xlabel="n", ylabel="coeficiente de correlación", title="Correlación")
+    plot(time,R2,legend=false, xlabel="n", ylabel="coeficiente de correlación", title="Correlación")
     
 end
 
